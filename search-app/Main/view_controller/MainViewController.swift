@@ -25,5 +25,36 @@ final class MainViewController: UIViewController {
     override func loadView() {
         view = rootView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        let standardAppearance = UINavigationBarAppearance.defaultAppearance()
+        navigationItem.applyAllAppearance(standardAppearance)
+        navigationItem.title = "Home Assignment"
+    }
 }
 
+extension UINavigationItem {
+    func applyAllAppearance(_ appearance: UINavigationBarAppearance) {
+        standardAppearance = appearance
+        scrollEdgeAppearance = appearance
+        compactAppearance = appearance
+        compactScrollEdgeAppearance = appearance
+    }
+}
+
+extension UINavigationBarAppearance {
+    static func defaultAppearance() -> UINavigationBarAppearance {
+        let standardAppearance = UINavigationBarAppearance()
+        standardAppearance.configureWithOpaqueBackground()
+        standardAppearance.backgroundImage = UIImage()
+        standardAppearance.backgroundColor = .wildSand
+        standardAppearance.shadowImage = UIImage()
+        standardAppearance.shadowColor = .clear
+        return standardAppearance
+    }
+}
