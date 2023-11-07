@@ -16,10 +16,15 @@ final class MainViewController: UIViewController {
         self.rootView = MainView()
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        setupBinding()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupBinding() {
+        rootView.searchBar.delegate = self
     }
     
     override func loadView() {
@@ -35,6 +40,12 @@ final class MainViewController: UIViewController {
         let standardAppearance = UINavigationBarAppearance.defaultAppearance()
         navigationItem.applyAllAppearance(standardAppearance)
         navigationItem.title = "Home Assignment"
+    }
+}
+
+extension MainViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        debugPrint(searchBar.text)
     }
 }
 
