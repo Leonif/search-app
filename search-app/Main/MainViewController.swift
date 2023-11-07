@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  search-app
 //
 //  Created by LEONID NIFANTIJEV on 07.11.2023.
@@ -7,13 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
     }
-
-
 }
 
