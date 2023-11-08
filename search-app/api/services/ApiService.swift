@@ -19,6 +19,3 @@ func readJSONFile<T:Decodable>(forName name: String) throws -> T {
        }
 }
 
-enum SearchAppError: Error {
-    case objectNotFound
-}

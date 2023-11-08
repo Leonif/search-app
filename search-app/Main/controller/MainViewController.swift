@@ -11,12 +11,12 @@ final class MainViewController: UIViewController {
 
     private let rootView: MainView
     private let viewModel: MainViewModel
+    private var bag = Set<AnyCancellable>()
     
     init(viewModel: MainViewModel) {
         self.rootView = MainView()
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        setupBinding()
     }
     
     required init?(coder: NSCoder) {
@@ -25,6 +25,11 @@ final class MainViewController: UIViewController {
     
     private func setupBinding() {
         rootView.searchBar.delegate = self
+        viewModel.errorSubject
+            .compactMap { $0 }
+            .sink { [unowned self] error in
+                showAlert(with: error)
+            }.store(in: &bag)
     }
     
     override func loadView() {
@@ -33,6 +38,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBinding()
         setupNavigationBar()
     }
     
@@ -40,6 +46,11 @@ final class MainViewController: UIViewController {
         let standardAppearance = UINavigationBarAppearance.defaultAppearance()
         navigationItem.applyAllAppearance(standardAppearance)
         navigationItem.title = "Home Assignment"
+    }
+    
+    private func showAlert(with error: Error) {
+        let message = UIAlertController(title: "Attention", message: error.localizedDescription, preferredStyle: .alert)
+        present(message, animated: true, completion: nil)
     }
 }
 
