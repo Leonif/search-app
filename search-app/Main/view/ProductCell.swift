@@ -80,7 +80,7 @@ final class ProductCell: UICollectionViewCell {
         iconImageView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(8)
             make.leading.equalToSuperview().offset(8)
-            make.size.equalTo(imageSize)
+            make.size.equalTo(imageSize).priority(999)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -98,7 +98,8 @@ final class ProductCell: UICollectionViewCell {
         separatorView.snp.makeConstraints { make in
             make.height.equalTo(1)
             make.leading.equalTo(iconImageView)
-            make.bottom.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().priority(999)
+            make.bottom.equalToSuperview()
         }
     }
 }

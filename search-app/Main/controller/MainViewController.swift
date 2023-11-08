@@ -42,6 +42,10 @@ final class MainViewController: UIViewController {
         viewModel.$products.sink { [unowned self] _ in
             rootView.collectionView.reloadData()
         }.store(in: &bag)
+        
+        Publishers.keyboardHeight.sink { [unowned self] keyboardHeight in
+            rootView.collectionView.contentInset.bottom = keyboardHeight
+        }.store(in: &bag)
     }
     
     override func loadView() {
@@ -63,7 +67,13 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        debugPrint(searchBar.text)
+        viewModel.searchInProgress.send(searchBar.text)
+        rootView.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard searchText.isEmpty else { return }
+        viewModel.searchInProgress.send("")
     }
 }
 

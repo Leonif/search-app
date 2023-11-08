@@ -51,6 +51,9 @@ final class MainView: UIView {
         searchBar.placeholder = "Search for images"
         searchBar.barTintColor = .frenchGray
         searchBar.searchTextField.backgroundColor = .white
+        searchBar.returnKeyType = .done
+        searchBar.enablesReturnKeyAutomatically = false
+        
         addSubview(searchBar)
     }
     

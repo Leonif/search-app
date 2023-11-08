@@ -132,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				3320009F2AFAAEA200F8E991 /* MainViewController.swift */,
-				332000D52AFB99F800F8E991 /* ProductCell.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -140,6 +139,7 @@
 		332000BE2AFB720E00F8E991 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				332000D52AFB99F800F8E991 /* ProductCell.swift */,
 				332000BF2AFB720E00F8E991 /* MainView.swift */,
 			);
 			path = view;
