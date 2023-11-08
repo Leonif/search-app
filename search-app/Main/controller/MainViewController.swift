@@ -66,23 +66,6 @@ extension MainViewController: UISearchBarDelegate {
     }
 }
 
-extension UINavigationItem {
-    func applyAllAppearance(_ appearance: UINavigationBarAppearance) {
-        standardAppearance = appearance
-        scrollEdgeAppearance = appearance
-        compactAppearance = appearance
-        compactScrollEdgeAppearance = appearance
     }
-}
-
-extension UINavigationBarAppearance {
-    static func defaultAppearance() -> UINavigationBarAppearance {
-        let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.configureWithOpaqueBackground()
-        standardAppearance.backgroundImage = UIImage()
-        standardAppearance.backgroundColor = .wildSand
-        standardAppearance.shadowImage = UIImage()
-        standardAppearance.shadowColor = .clear
-        return standardAppearance
     }
 }

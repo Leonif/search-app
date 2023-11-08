@@ -22,6 +22,7 @@
 		332000CD2AFB855800F8E991 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000CC2AFB855800F8E991 /* Products.swift */; };
 		332000CF2AFB857000F8E991 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000CE2AFB857000F8E991 /* Product.swift */; };
 		332000D22AFB8B9800F8E991 /* SearchAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000D12AFB8B9800F8E991 /* SearchAppError.swift */; };
+		332000D42AFB994600F8E991 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000D32AFB994600F8E991 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		332000CC2AFB855800F8E991 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		332000CE2AFB857000F8E991 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		332000D12AFB8B9800F8E991 /* SearchAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppError.swift; sourceTree = "<group>"; };
+		332000D32AFB994600F8E991 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				332000C02AFB723A00F8E991 /* model */,
 				332000BE2AFB720E00F8E991 /* view */,
 				332000B22AFAB42700F8E991 /* controller */,
+				332000D32AFB994600F8E991 /* Extensions.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				332000CF2AFB857000F8E991 /* Product.swift in Sources */,
 				332000C62AFB742500F8E991 /* MainView.swift in Sources */,
 				332000C52AFB737400F8E991 /* ApiService.swift in Sources */,
+				332000D42AFB994600F8E991 /* Extensions.swift in Sources */,
 				332000CD2AFB855800F8E991 /* Products.swift in Sources */,
 				332000A02AFAAEA200F8E991 /* MainViewController.swift in Sources */,
 				3320009C2AFAAEA200F8E991 /* AppDelegate.swift in Sources */,
