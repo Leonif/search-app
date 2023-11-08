@@ -28,3 +28,9 @@ extension UINavigationBarAppearance {
     }
 }
 
+extension UIViewController {
+    func showAlert(with error: Error) {
+        let message = UIAlertController(title: "Attention", message: error.localizedDescription, preferredStyle: .alert)
+        present(message, animated: true, completion: nil)
+    }
+}

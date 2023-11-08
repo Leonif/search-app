@@ -15,8 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let module = MainViewController(viewModel: MainViewModel())
-        window.rootViewController = UINavigationController(rootViewController: module)
+        
+        let viewModel = MainViewModel()
+        let module = MainViewController(viewModel: viewModel)
+        let nav = UINavigationController(rootViewController: module)
+        
+        viewModel.detailsTapped.sink { product in
+            nav.pushViewController(DetailsViewController(viewModel: DetailsViewModel(product: product)), animated: true)
+        }.store(in: &viewModel.bag)
+        
+        window.rootViewController = nav
         window.makeKeyAndVisible()
         self.window = window
     }

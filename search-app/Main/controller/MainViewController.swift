@@ -59,11 +59,6 @@ final class MainViewController: UIViewController {
         navigationItem.applyAllAppearance(standardAppearance)
         navigationItem.title = "Home Assignment"
     }
-    
-    private func showAlert(with error: Error) {
-        let message = UIAlertController(title: "Attention", message: error.localizedDescription, preferredStyle: .alert)
-        present(message, animated: true, completion: nil)
-    }
 }
 
 extension MainViewController: UISearchBarDelegate {
@@ -86,6 +81,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = viewModel.products[indexPath.row]
-        debugPrint("TEST \(product.id)")
+        viewModel.detailsTapped.send(product)
     }
 }
