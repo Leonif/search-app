@@ -30,7 +30,7 @@ final class ProductCell: UICollectionViewCell {
     
     func bind(_ product: Product) {
         titleLabel.text = product.text
-        iconImageView.sd_setImage(with: URL(string: product.smalImageUrlString!), placeholderImage: UIImage())
+        iconImageView.sd_setImage(with: URL(string: product.smallImageUrlString!), placeholderImage: UIImage())
     }
     
     private func setup() {

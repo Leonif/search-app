@@ -28,6 +28,7 @@
 		332000DB2AFBABD500F8E991 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000DA2AFBABD500F8E991 /* DetailsViewController.swift */; };
 		332000DE2AFBAD2A00F8E991 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000DD2AFBAD2A00F8E991 /* DetailsViewModel.swift */; };
 		332000E02AFBADA200F8E991 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000DF2AFBADA200F8E991 /* DetailsView.swift */; };
+		332000E22AFBCAEF00F8E991 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000E12AFBCAEF00F8E991 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		332000DA2AFBABD500F8E991 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		332000DD2AFBAD2A00F8E991 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		332000DF2AFBADA200F8E991 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		332000E12AFBCAEF00F8E991 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				332000B02AFAB35100F8E991 /* supported_files */,
 				332000B12AFAB38D00F8E991 /* resources */,
 				332000AF2AFAB2F000F8E991 /* Main */,
+				332000DC2AFBABE300F8E991 /* Details */,
 			);
 			path = "search-app";
 			sourceTree = "<group>";
@@ -100,8 +103,6 @@
 				332000C02AFB723A00F8E991 /* model */,
 				332000BE2AFB720E00F8E991 /* view */,
 				332000B22AFAB42700F8E991 /* controller */,
-				332000D32AFB994600F8E991 /* Extensions.swift */,
-				332000DC2AFBABE300F8E991 /* Details */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -122,6 +123,7 @@
 				332000A42AFAAEA400F8E991 /* Assets.xcassets */,
 				332000BC2AFAB9AC00F8E991 /* Colors.xcassets */,
 				332000A62AFAAEA400F8E991 /* LaunchScreen.storyboard */,
+				332000D32AFB994600F8E991 /* Extensions.swift */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 			children = (
 				332000CC2AFB855800F8E991 /* Products.swift */,
 				332000CE2AFB857000F8E991 /* Product.swift */,
+				332000E12AFBCAEF00F8E991 /* User.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -182,11 +185,35 @@
 		332000DC2AFBABE300F8E991 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				332000DA2AFBABD500F8E991 /* DetailsViewController.swift */,
-				332000DD2AFBAD2A00F8E991 /* DetailsViewModel.swift */,
-				332000DF2AFBADA200F8E991 /* DetailsView.swift */,
+				332000E42AFBCCAD00F8E991 /* model */,
+				332000E52AFBCCB300F8E991 /* view */,
+				332000E32AFBCCA600F8E991 /* controller */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		332000E32AFBCCA600F8E991 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				332000DA2AFBABD500F8E991 /* DetailsViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		332000E42AFBCCAD00F8E991 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				332000DD2AFBAD2A00F8E991 /* DetailsViewModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		332000E52AFBCCB300F8E991 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				332000DF2AFBADA200F8E991 /* DetailsView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +305,7 @@
 				332000DE2AFBAD2A00F8E991 /* DetailsViewModel.swift in Sources */,
 				332000C62AFB742500F8E991 /* MainView.swift in Sources */,
 				332000C52AFB737400F8E991 /* ApiService.swift in Sources */,
+				332000E22AFBCAEF00F8E991 /* User.swift in Sources */,
 				332000D42AFB994600F8E991 /* Extensions.swift in Sources */,
 				332000CD2AFB855800F8E991 /* Products.swift in Sources */,
 				332000A02AFAAEA200F8E991 /* MainViewController.swift in Sources */,
