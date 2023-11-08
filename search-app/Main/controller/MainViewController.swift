@@ -18,6 +18,10 @@ final class MainViewController: UIViewController {
         self.rootView = MainView()
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        rootView.searchBar.delegate = self
+        rootView.collectionView.dataSource = self
+        rootView.collectionView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -25,8 +29,6 @@ final class MainViewController: UIViewController {
     }
     
     private func setupBinding() {
-        rootView.searchBar.delegate = self
-        
         viewModel.errorSubject
             .compactMap { $0 }
             .sink { [unowned self] error in
@@ -35,6 +37,10 @@ final class MainViewController: UIViewController {
         
         viewModel.$isBusy.sink { [unowned self] isBusy in
             rootView.isLoading = isBusy
+        }.store(in: &bag)
+        
+        viewModel.$products.sink { [unowned self] _ in
+            rootView.collectionView.reloadData()
         }.store(in: &bag)
     }
     
@@ -66,6 +72,20 @@ extension MainViewController: UISearchBarDelegate {
     }
 }
 
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.products.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.id, for: indexPath) as! ProductCell
+        let product = viewModel.products[indexPath.row]
+        cell.bind(product)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = viewModel.products[indexPath.row]
+        debugPrint("TEST \(product.id)")
     }
 }

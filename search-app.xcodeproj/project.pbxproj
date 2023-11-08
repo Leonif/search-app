@@ -23,6 +23,8 @@
 		332000CF2AFB857000F8E991 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000CE2AFB857000F8E991 /* Product.swift */; };
 		332000D22AFB8B9800F8E991 /* SearchAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000D12AFB8B9800F8E991 /* SearchAppError.swift */; };
 		332000D42AFB994600F8E991 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000D32AFB994600F8E991 /* Extensions.swift */; };
+		332000D62AFB99F800F8E991 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332000D52AFB99F800F8E991 /* ProductCell.swift */; };
+		332000D92AFBA36200F8E991 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 332000D82AFBA36200F8E991 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		332000CE2AFB857000F8E991 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		332000D12AFB8B9800F8E991 /* SearchAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppError.swift; sourceTree = "<group>"; };
 		332000D32AFB994600F8E991 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		332000D52AFB99F800F8E991 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				332000D92AFBA36200F8E991 /* SDWebImage in Frameworks */,
 				332000B72AFAB54100F8E991 /* SnapKit in Frameworks */,
 				332000B92AFAB54100F8E991 /* SnapKit-Dynamic in Frameworks */,
 			);
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				3320009F2AFAAEA200F8E991 /* MainViewController.swift */,
+				332000D52AFB99F800F8E991 /* ProductCell.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			packageProductDependencies = (
 				332000B62AFAB54100F8E991 /* SnapKit */,
 				332000B82AFAB54100F8E991 /* SnapKit-Dynamic */,
+				332000D82AFBA36200F8E991 /* SDWebImage */,
 			);
 			productName = "search-app";
 			productReference = 332000982AFAAEA200F8E991 /* search-app.app */;
@@ -217,6 +223,7 @@
 			mainGroup = 3320008F2AFAAEA200F8E991;
 			packageReferences = (
 				332000B52AFAB54100F8E991 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				332000D72AFBA36200F8E991 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 332000992AFAAEA200F8E991 /* Products */;
 			projectDirPath = "";
@@ -247,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				332000D22AFB8B9800F8E991 /* SearchAppError.swift in Sources */,
+				332000D62AFB99F800F8E991 /* ProductCell.swift in Sources */,
 				332000BB2AFAB66100F8E991 /* MainViewModel.swift in Sources */,
 				332000CF2AFB857000F8E991 /* Product.swift in Sources */,
 				332000C62AFB742500F8E991 /* MainView.swift in Sources */,
@@ -478,6 +486,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		332000D72AFBA36200F8E991 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -490,6 +506,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 332000B52AFAB54100F8E991 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		332000D82AFBA36200F8E991 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 332000D72AFBA36200F8E991 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

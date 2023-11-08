@@ -16,6 +16,7 @@ final class MainView: UIView {
     
     private(set) var searchBar = UISearchBar()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private(set) lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: setupLayout())
     
     init() {
         super.init(frame: .zero)
@@ -38,6 +39,7 @@ final class MainView: UIView {
         setupSelf()
         setupSearchBar()
         setupActivityIndicator()
+        setupCollectionView()
         setupConstraints()
     }
     
@@ -58,6 +60,23 @@ final class MainView: UIView {
         addSubview(activityIndicator)
     }
     
+    private func setupCollectionView() {
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.id)
+        collectionView.backgroundColor = .clear
+        addSubview(collectionView)
+    }
+    
+    private func setupLayout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section =  NSCollectionLayoutSection(group: group)
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
     private func setupConstraints() {
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -67,6 +86,12 @@ final class MainView: UIView {
         activityIndicator.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(32)
             make.centerX.equalToSuperview()
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom)
+            make.leading.equalToSuperview()
+            make.bottom.trailing.equalToSuperview()
         }
     }
 }
