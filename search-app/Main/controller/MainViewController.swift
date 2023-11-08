@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class MainViewController: UIViewController {
 
@@ -25,11 +26,16 @@ final class MainViewController: UIViewController {
     
     private func setupBinding() {
         rootView.searchBar.delegate = self
+        
         viewModel.errorSubject
             .compactMap { $0 }
             .sink { [unowned self] error in
                 showAlert(with: error)
             }.store(in: &bag)
+        
+        viewModel.$isBusy.sink { [unowned self] isBusy in
+            rootView.isLoading = isBusy
+        }.store(in: &bag)
     }
     
     override func loadView() {
